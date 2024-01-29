@@ -7,7 +7,7 @@ then to start the project - npm run dev or yarn dev
 The project is hosted on port (http://localhost:3000)
 
 
-And deployed on verzcel - https://booking-flow-ochre.vercel.app/
+And deployed on vercel - https://booking-flow-ochre.vercel.app/
 
 
 this project uses momentjs for date formatting and making custom calendar, react-redux for state management, and no other external libraries
