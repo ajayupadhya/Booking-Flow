@@ -3,7 +3,7 @@ import styles from "./rightSide.module.css";
 import { useSelector } from "react-redux";
 import { DivideSlotsIntoTimeFrame } from "../../../lib/helperFunction";
 import Image from "next/image";
-import CircleCheck from "../../../images/svg/CircleCheck.svg";
+import CircleCheck from "../../../images/svg/circleCheck.svg";
 import moment from "moment";
 const RightSide = () => {
   const slots = useSelector((state) => state.bookingSlice.slots);
@@ -22,7 +22,7 @@ const RightSide = () => {
     setSelectedSlot(slot)
   };
 
-  console.log(slots)
+  
   
 
   return (
