@@ -1,0 +1,211 @@
+.calendar {
+  /* border: 2px solid blue; */
+  display: grid;
+  grid-template-columns: auto;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 2px #00000017;
+  border: 1px solid #ebebeb;
+  border-radius: 6px;
+  padding: 0 10px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 400px;
+  gap: 15px;
+}
+
+.calendar_body {
+  width: 100%;
+}
+
+.calendar_week {
+  /* border: 2px solid red; */
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 8px 0;
+}
+
+.calendar_day {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  padding: 3px;
+  height: 35px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+
+  color: #333;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.selected {
+  background-color: #378760;;
+  border-radius: 99px;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.today {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-radius: 99px;
+  background: #378760;
+}
+
+.before {
+  color: #333;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.caledar_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 0px;
+  border-bottom: 1px solid  #F2F2F5;
+}
+
+.previous_year,
+.next_year {
+  font-size: 20px;
+  color: #378760;
+  cursor: pointer;
+}
+
+.weekdays {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.weekdays > p {
+  color: #378760;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+.current{
+  color: #333;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: uppercase;
+
+}
+
+@media screen and (max-width: 600px) {
+  .calendar {
+    /* border: 2px solid red; */
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 5px;
+  }
+
+  .calendar_body,
+  .weekdays {
+    width: 88%;
+  }
+
+  .before,
+  .selected {
+    width: 95%;
+    height: 85%;
+  }
+
+  .today {
+    height: 91%;
+  }
+
+  .caledar_header {
+    /* border: 1px solid red; */
+    width: 90%;
+  }
+
+  #progress-content-section .section-content {
+    padding: 0;
+  }
+
+  .expert-slot-time-btn,
+  .expert-slot-book-btn,
+  .expert-date-select-btn {
+    width: 300px;
+    margin: 20px auto;
+  }
+
+  #progress-content-section .section-content {
+    /* border: 2px solid red; */
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .morning-slots {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .single-slot,
+  .single-slot-selected {
+    width: 90px;
+  }
+
+  #progress-content-section {
+    width: 95%;
+  }
+
+  .expert-form-wrapper {
+    /* border: 2px solid red; */
+    margin: 18px auto 110px auto;
+  }
+
+  .custom-modal-whatsap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* border: 2px solid red; */
+    padding: 0 0 0 10px;
+  }
+
+  .production > h4 {
+    /* border: 2px solid red; */
+    font-size: 20px;
+  }
+
+  .booked-slot-timing {
+    font-size: 20px;
+  }
+
+  .appt-notification {
+    font-size: 16px;
+  }
+}

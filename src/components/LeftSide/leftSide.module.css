@@ -1,0 +1,36 @@
+.leftSide {
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: #ebebf0;
+  }
+  
+  .leftSide > h2 {
+    color: #28293d;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.25px;
+  }
+  
+  .leftSide > p {
+    color: #555770;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+  
+    line-height: 21px; /* 150% */
+  
+    font-weight: 400;
+    line-height: 21px; /* 150% */
+  }
+  
+  .leftSide > p > span {
+    font-weight: 600;
+  }
