@@ -3,7 +3,9 @@
 Project is built on next js, to run a project
 
 first, install dependencies by running - npm install or yarn
+
 then to start the project - npm run dev or yarn dev
+
 The project is hosted on port (http://localhost:3000)
 
 
