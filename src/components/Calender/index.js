@@ -79,7 +79,7 @@ export default function Calendar({ value, onChange }) {
           <div className={styles.calendar_week} key={i}>
             {week.map((day , index) => (
               <div
-                className={styles.calendar_day}
+                className={`${styles.calendar_day} ${beforeToday(day) && styles.disableDate}`}
                 onClick={() => !beforeToday(day) && onChange(day)}
                 key={index}
               >

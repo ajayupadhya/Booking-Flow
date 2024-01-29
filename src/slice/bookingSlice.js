@@ -3,104 +3,26 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   slots: [],
   loading: false,
+  error:""
 };
 
-// GET https://app.appointo.me/scripttag/mock_timeslots?start_date=2024-01-20&end_date=2024-01-30
-
-// [
-//   {
-//     date: "2024-01-17",
-//     slots: [
-//       {
-//         start_time: "2024-01-17T12:04:10.000+09:00",
-//         end_time: "2024-01-17T13:04:10.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-17T13:04:10.000+09:00",
-//         end_time: "2024-01-17T14:04:10.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-17T14:04:10.000+09:00",
-//         end_time: "2024-01-17T15:04:10.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-17T15:04:10.000+09:00",
-//         end_time: "2024-01-17T16:04:10.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-17T16:04:10.000+09:00",
-//         end_time: "2024-01-17T17:04:10.000+09:00",
-//       },
-//     ],
-//   },
-//   {
-//     date: "2024-01-18",
-//     slots: [
-//       {
-//         start_time: "2024-01-18T09:00:00.000+09:00",
-//         end_time: "2024-01-18T10:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-18T10:00:00.000+09:00",
-//         end_time: "2024-01-18T11:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-18T11:00:00.000+09:00",
-//         end_time: "2024-01-18T12:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-18T12:00:00.000+09:00",
-//         end_time: "2024-01-18T13:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-18T13:00:00.000+09:00",
-//         end_time: "2024-01-18T14:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-18T14:00:00.000+09:00",
-//         end_time: "2024-01-18T15:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-18T15:00:00.000+09:00",
-//         end_time: "2024-01-18T16:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-18T16:00:00.000+09:00",
-//         end_time: "2024-01-18T17:00:00.000+09:00",
-//       },
-//     ],
-//   },
-//   {
-//     date: "2024-01-19",
-//     slots: [
-//       {
-//         start_time: "2024-01-19T09:00:00.000+09:00",
-//         end_time: "2024-01-19T10:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-19T10:00:00.000+09:00",
-//         end_time: "2024-01-19T11:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-19T11:00:00.000+09:00",
-//         end_time: "2024-01-19T12:00:00.000+09:00",
-//       },
-//       {
-//         start_time: "2024-01-19T12:00:00.000+09:00",
-//         end_time: "2024-01-19T13:00:00.000+09:00",
-//       },
-//     ],
-//   },
-// ];
-
 export const getSlot = createAsyncThunk("getSlot", async (data, thunkAPI) => {
-  const response = await fetch(
-    `https://app.appointo.me/scripttag/mock_timeslots?${
-      start_date && "start_date =" + start_date
-    }${end_date && "&end_date=" + end_date}`
-  );
+  const { start_date, end_date } = data;
 
-  return await response.json();
+  try {
+    const response = await fetch(
+      `https://app.appointo.me/scripttag/mock_timeslots?${
+        start_date && "start_date =" + start_date
+      }${end_date && "&end_date=" + end_date}`
+    );
+    const filteredDate = await response.json();
+  
+    
+    return filteredDate[filteredDate.length - 1];
+  } catch (error) {
+    console.log(error , "err")
+  }
+  
 });
 
 export const bookingSlice = createSlice({
@@ -122,6 +44,6 @@ export const bookingSlice = createSlice({
 });
 
 export const allSlot = (state) => state.slots;
-export const loadingState = (state) => state.loading
+export const loadingState = (state) => state.loading;
 
 export default bookingSlice.reducer;
